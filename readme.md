@@ -7,6 +7,7 @@ It also demos distributed tracing, co-relating logs in cases where one request s
 1. Install Java 11 JDK
 2. Set up a project in GCP through https://cloud.google.com/ or gcloud CLI
 3. Enable billing
+4. Through GCP console enable: App Engine Admin AP, Stackdriver API, Stackdriver Logging API, Stackdriver Trace API
 
 # Building
 ./mvnw clean install
@@ -70,6 +71,11 @@ curl -i -XPOST \
 -d '{"firstName":"My","lastName":"Nyugen","customerId":"53a2e698-0205-4546-aae6-8fc903c478c7","orderDate":"2019-10-10T18:06:48.526+0000"}' \
 http://localhost:8080/orders
 ##  Note: This wont work for some reason, the passed in X-Cloud-Trace-Context does not get used
+
+
+## tailing logs using gcloud CLI ##
+
+gcloud app logs tail -s spring-boot-restapi-java11-demo
 
 
 # Issues/Todo

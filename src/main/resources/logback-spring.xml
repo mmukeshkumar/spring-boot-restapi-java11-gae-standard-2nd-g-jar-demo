@@ -6,9 +6,7 @@
 
     <root level="INFO">
         <springProfile name="dev_gcp">
-            <appender-ref ref="CONSOLE"/>
-           <!-- Uncomment after enabling GCP Stackdriver
-           <appender-ref ref="STACKDRIVER" />-->
+            <appender-ref ref="STACKDRIVER" />
         </springProfile>
         <springProfile name="dev_local">
             <appender-ref ref="CONSOLE"/>
