@@ -1,0 +1,18 @@
+curl -i https://spring-boot-restapi-java11-demo-dot-dpr-drttest-us-nonprod-1.appspot.com/orders
+curl -i -XPOST \
+-H "Content-Type: application/json" \
+-d '{"firstName":"Larry","lastName":"Grooves","customerId":"53a2e699-0205-4546-aae6-8fc903c478c7","orderDate":"2019-10-10T18:06:48.526+0000"}' \
+https://spring-boot-restapi-java11-demo-dot-dpr-drttest-us-nonprod-1.appspot.com/orders
+
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"message": "Hello"}' \
+https://spring-boot-restapi-java11-demo-dot-dpr-drttest-us-nonprod-1.appspot.com/greet
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H "Accept: application/json" \
+-d '{"message": "Hello"}' \
+https://spring-boot-restapi-java11-demo-dot-dpr-drttest-us-nonprod-1.appspot.com/greetAsync 
