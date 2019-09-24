@@ -48,7 +48,7 @@ public class HashMapInMemoryOrdersDbService {
 
     public String createOrder(Order order) {
         String orderId = UUID.randomUUID().toString();
-        order.setId(UUID.randomUUID().toString());
+        order.setId(orderId);
         order.setFirstName(order.getFirstName());
         order.setLastName(order.getLastName());
         order.setCustomerId(order.getCustomerId());

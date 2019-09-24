@@ -19,10 +19,3 @@ service: spring-boot-restapi-java11-demo
 
 beta_settings:
   java_quickstart: true
-
-# Explicitly set the memory limit and maximum heap size for the Spring Boot app
-# -Xms256m -Xmx256m is for Heap size
-# -XX:MaxRAM=512m is for total max RAM that can be used by the JVM
-env_variables:
-  PORT: 8080
-  JAVA_TOOL_OPTIONS: "-XX:MaxRAM=512m -XX:ActiveProcessorCount=2 -Xms256m -Xmx256m"

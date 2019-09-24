@@ -5,10 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -45,10 +42,6 @@ public class HashMapInMemoryOrdersStartupRunnerService implements ApplicationRun
         order2.setFirstName("Zippy");
         order2.setLastName("Kumar");
         order2.setOrderDate(new Date());
-
-        List<Order> orders = new ArrayList<>();
-        orders.add(order1);
-        orders.add(order2);
 
         String newOrderId = hashMapInMemoryOrdersDbService.createOrder(order1);
         log.info("Order created, order Id:  {}", newOrderId);

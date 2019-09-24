@@ -54,7 +54,8 @@ public class OrdersController {
     @GetMapping(value = "/{orderId}")
     public Order findOrder(@PathVariable("orderId") String orderId) {
         log.info("Getting Order ID: {}", orderId);
-        return hashMapInMemoryOrdersDbService.findOrder(orderId);
+        Order order = hashMapInMemoryOrdersDbService.findOrder(orderId);
+        return order;
     }
 
     /**

@@ -12,7 +12,7 @@ It also demos distributed tracing, co-relating logs in cases where one request s
 ./mvnw clean install
 
 # Running locally: 
-java -jar target/spring-boot-gcp-java11-stackdriver-tracing-logging-demo-0.0.1-SNAPSHOT.jar
+java -Dspring.profiles.active=dev_local -jar target/spring-boot-restapi-java11-demo-0.0.1-SNAPSHOT.jar
 OR import project into Intellij IDE and run the GcpDemoApplication as a Java application
 
 # Testing locally:
@@ -42,12 +42,11 @@ curl -X POST \
 -d '{"message": "Hello"}' \
 http://localhost:8080/greetAsync 
 
-
 #submit request and get trace Id back
 curl -i -XPOST \
 -H "Content-Type: application/json" \
 -d '{"firstName":"Larry","lastName":"Grooves","customerId":"53a2e699-0205-4546-aae6-8fc903c478c7","orderDate":"2019-10-10T18:06:48.526+0000"}' \
-https://spring-boot-gcp-demo-251616.appspot.com/orders
+http://localhost:8080/orders
 
 HTTP/2 201
 set-cookie: JSESSIONID=node0piy6x6ldeidw14trhe11h2axe3.node0; Path=/
@@ -69,7 +68,7 @@ curl -i -XPOST \
 -H "Content-Type: application/json" \
 -H "X-Cloud-Trace-Context: 105445aa7843bc8bf206b120001000" \
 -d '{"firstName":"My","lastName":"Nyugen","customerId":"53a2e698-0205-4546-aae6-8fc903c478c7","orderDate":"2019-10-10T18:06:48.526+0000"}' \
-https://spring-boot-gcp-demo-251616.appspot.com/orders
+http://localhost:8080/orders
 ##  Note: This wont work for some reason, the passed in X-Cloud-Trace-Context does not get used
 
 
@@ -77,8 +76,6 @@ https://spring-boot-gcp-demo-251616.appspot.com/orders
  * force a trace Id wont work, the passed in X-Cloud-Trace-Context does not get used, instead a new X-Cloud-Trace-Context gets used and returned
  * when deployed to app engine standard, its takes upto 30 seconds to start an instances since all instances get shutdown when no requests come in
    for certain period of time
-
-
 
 
 

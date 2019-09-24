@@ -2,8 +2,6 @@ package com.example.springboot.gcp;
 
 import brave.SpanCustomizer;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,7 +33,6 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class GcpDemoApplication extends SpringBootServletInitializer implements WebMvcConfigurer  {
 
-    static private final Logger logger = LoggerFactory.getLogger(GcpDemoApplication.class);
 
     @Autowired
     private Environment environment;

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-restapi-java11-gae-standard-2nd-g-jar-demo</artifactId>
+	<artifactId>spring-boot-restapi-java11-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-restapi-java11-gae-standard-2nd-g-jar-demo</name>
+	<name>spring-boot-restapi-java11-demo</name>
 	<description>Demo project for Spring Boot and GCP</description>
 
 	<properties>
