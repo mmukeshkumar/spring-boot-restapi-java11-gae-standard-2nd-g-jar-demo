@@ -69,6 +69,8 @@ public class GcpDemoApplication extends SpringBootServletInitializer implements 
             @Override
             public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
                     throws Exception {
+                //These will turn into labels on you traces in Stackdriver Trace, on which you can search.
+                //https://cloud.google.com/trace/docs/trace-filters
                spanCustomizer.tag("session-id", request.getSession().getId());
                 spanCustomizer.tag("environment", "DEV_GCP");
                 // add customer_id or order_id or any other id which would help co-relate and track requests
